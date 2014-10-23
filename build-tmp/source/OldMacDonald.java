@@ -1,5 +1,21 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OldMacDonald extends PApplet {
+
 //your variable declarations here
-void setup()
+public void setup()
 {
 	//your java code here
 	/*Cow c = new Cow("cow", "moo");
@@ -59,7 +75,7 @@ class Chick implements Animal
 	public Chick(String type, String sound1, String sound2)
 	{
 		myType = type;
-		if (Math.random() < 0.5) {
+		if (Math.random() < 0.5f) {
 			mySound1 = sound1;
 		} else {
 			mySound1 = sound2;
@@ -93,7 +109,7 @@ class Farm
 		for (int i = 0; i < aBunchOfAnimals.length; i++) {
 			System.out.println(aBunchOfAnimals[i].getType() + " goes " + aBunchOfAnimals[i].getSound());
 		}
-		System.out.println("The named cow is known as " + ((NamedCow)aBunchOfAnimals[0]).getName()  );
+		System.out.println("the named cow is known as " + ((NamedCow)aBunchOfAnimals[0]).getName()  );
 	}
 }
 class NamedCow extends Cow
@@ -108,4 +124,13 @@ class NamedCow extends Cow
 	public String getName() {
 		return myName;
 	}
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OldMacDonald" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
